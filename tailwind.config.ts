@@ -68,45 +68,45 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Theme-specific colors
-				marble: {
-					primary: 'hsl(var(--marble-primary))',
-					secondary: 'hsl(var(--marble-secondary))',
-					accent: 'hsl(var(--marble-accent))',
-					glow: 'hsl(var(--marble-glow))'
+				// Four World Colors
+				aurora: {
+					primary: 'hsl(var(--aurora-primary))',
+					secondary: 'hsl(var(--aurora-secondary))', 
+					accent: 'hsl(var(--aurora-accent))',
+					glow: 'hsl(var(--aurora-glow))'
 				},
-				obsidian: {
-					primary: 'hsl(var(--obsidian-primary))',
-					secondary: 'hsl(var(--obsidian-secondary))',
-					accent: 'hsl(var(--obsidian-accent))',
-					glow: 'hsl(var(--obsidian-glow))'
+				cosmos: {
+					primary: 'hsl(var(--cosmos-primary))',
+					secondary: 'hsl(var(--cosmos-secondary))',
+					accent: 'hsl(var(--cosmos-accent))',
+					glow: 'hsl(var(--cosmos-glow))'
 				},
-				cyber: {
-					primary: 'hsl(var(--cyber-primary))',
-					secondary: 'hsl(var(--cyber-secondary))',
-					accent: 'hsl(var(--cyber-accent))',
-					glow: 'hsl(var(--cyber-glow))'
+				circuit: {
+					primary: 'hsl(var(--circuit-primary))',
+					secondary: 'hsl(var(--circuit-secondary))',
+					accent: 'hsl(var(--circuit-accent))',
+					glow: 'hsl(var(--circuit-glow))'
 				},
-				bamboo: {
-					primary: 'hsl(var(--bamboo-primary))',
-					secondary: 'hsl(var(--bamboo-secondary))',
-					accent: 'hsl(var(--bamboo-accent))',
-					sage: 'hsl(var(--bamboo-sage))'
+				eden: {
+					primary: 'hsl(var(--eden-primary))',
+					secondary: 'hsl(var(--eden-secondary))',
+					accent: 'hsl(var(--eden-accent))',
+					nature: 'hsl(var(--eden-nature))'
 				}
 			},
 			backgroundImage: {
-				'gradient-marble': 'var(--gradient-marble)',
-				'gradient-golden': 'var(--gradient-golden)',
-				'gradient-radiant': 'var(--gradient-radiant)',
-				'gradient-obsidian': 'var(--gradient-obsidian)',
-				'gradient-purple': 'var(--gradient-purple)',
-				'gradient-mist': 'var(--gradient-mist)',
-				'gradient-cyber': 'var(--gradient-cyber)',
+				'gradient-aurora': 'var(--gradient-aurora)',
+				'gradient-sunrise': 'var(--gradient-sunrise)',
+				'gradient-morning': 'var(--gradient-morning)',
+				'gradient-cosmos': 'var(--gradient-cosmos)',
+				'gradient-space': 'var(--gradient-space)',
+				'gradient-nebula': 'var(--gradient-nebula)',
+				'gradient-circuit': 'var(--gradient-circuit)',
 				'gradient-neon': 'var(--gradient-neon)',
-				'gradient-hologram': 'var(--gradient-hologram)',
-				'gradient-bamboo': 'var(--gradient-bamboo)',
-				'gradient-sage': 'var(--gradient-sage)',
-				'gradient-sakura': 'var(--gradient-sakura)'
+				'gradient-tech': 'var(--gradient-tech)',
+				'gradient-eden': 'var(--gradient-eden)',
+				'gradient-forest': 'var(--gradient-forest)',
+				'gradient-nature': 'var(--gradient-nature)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

@@ -10,35 +10,35 @@ export function HeroSection() {
     switch (theme) {
       case 'dark':
         return {
-          title: 'Enter the Obsidian Arena',
-          subtitle: 'Where chess masters are forged in shadows and mist',
-          description: 'Descend into the gothic realm where AI minds clash in eternal battle. Every move echoes through halls of obsidian.',
+          title: 'Enter Cosmos',
+          subtitle: 'Where chess masters journey through infinite space',
+          description: 'Navigate the cosmic depths where AI minds orbit in eternal battle. Every move ripples through stellar infinity.',
           font: 'font-cinzel',
-          bgEffect: 'bg-gradient-mist'
+          bgEffect: 'bg-gradient-nebula'
         };
       case 'neon':
         return {
-          title: 'Access the Cyber Grid',
-          subtitle: 'Neural networks collide in digital infinity',
-          description: 'Jack into the matrix of pure strategy. Where algorithms dance and holographic pieces move through quantum space.',
+          title: 'Access Circuit',
+          subtitle: 'Neural networks clash in electric harmony',
+          description: 'Jack into the high-tech arena where algorithms pulse with neon energy. Strategy flows through quantum circuits.',
           font: 'font-orbitron',
-          bgEffect: 'bg-gradient-hologram'
+          bgEffect: 'bg-gradient-tech'
         };
       case 'zen':
         return {
-          title: 'Welcome to the Bamboo Dojo',
-          subtitle: 'Where ancient wisdom meets modern mastery',
-          description: 'Find balance in the art of war. Let sakura petals guide your path to enlightenment through the way of chess.',
+          title: 'Welcome to Eden',
+          subtitle: 'Where ancient wisdom flows through living forests',
+          description: 'Discover the sacred grove where nature\'s intelligence guides every move. Chess becomes one with the living world.',
           font: 'font-noto',
-          bgEffect: 'bg-gradient-sakura'
+          bgEffect: 'bg-gradient-nature'
         };
       default: // light
         return {
-          title: 'Enter the Marble Hall',
-          subtitle: 'Where champions rise to golden glory',
-          description: 'Step into halls of marble and light. Where every victory is carved in stone and legends are born.',
+          title: 'Enter Aurora',
+          subtitle: 'Where champions rise with the morning sun',
+          description: 'Ascend to the sunrise planet where golden light illuminates every victory. Dawn breaks on a new era of chess mastery.',
           font: 'font-inter',
-          bgEffect: 'bg-gradient-radiant'
+          bgEffect: 'bg-gradient-morning'
         };
     }
   };
@@ -46,11 +46,11 @@ export function HeroSection() {
   const themeContent = getThemeContent();
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-24 pb-16 px-4">
+    <section className="relative min-h-screen flex items-center justify-center pt-20 pb-16 px-4 md:px-6 lg:px-8">
       {/* Background Effect */}
       <div className={`absolute inset-0 ${themeContent.bgEffect} opacity-30`} />
       
-      <div className="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 container mx-auto grid lg:grid-cols-2 gap-8 lg:gap-16 items-center max-w-7xl">
         {/* Content */}
         <div className="space-y-8 animate-fade-in">
           <div className={`${themeContent.font} space-y-4`}>
@@ -71,35 +71,35 @@ export function HeroSection() {
           </p>
 
           {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-4 lg:gap-6">
             <Button 
-              size="lg" 
-              className="group relative overflow-hidden bg-primary hover:bg-primary/90 text-primary-foreground h-14 px-8"
+              size="xl" 
+              className="group relative overflow-hidden bg-primary hover:bg-primary/90 text-primary-foreground shadow-2xl hover:shadow-primary/25 transition-all duration-300 hover:scale-105"
             >
               <div className="flex items-center gap-3 relative z-10">
-                <Play className="h-5 w-5" />
+                <Play className="h-6 w-6 transition-transform group-hover:scale-110" />
                 <span className="text-lg font-semibold">Start Playing</span>
               </div>
               <div className="glow-effect" />
             </Button>
 
-            <div className="flex gap-3">
+            <div className="flex flex-col sm:flex-row gap-3">
               <Button 
-                variant="outline" 
+                variant="floating" 
                 size="lg" 
-                className="group h-14 px-6 floating-panel border-primary/20"
+                className="group transition-all duration-300 hover:translate-y-[-2px]"
               >
-                <GraduationCap className="h-5 w-5 mr-2" />
-                Learn
+                <GraduationCap className="h-5 w-5 mr-2 transition-transform group-hover:scale-110" />
+                <span>Learn</span>
               </Button>
               
               <Button 
-                variant="outline" 
+                variant="floating" 
                 size="lg" 
-                className="group h-14 px-6 floating-panel border-primary/20"
+                className="group transition-all duration-300 hover:translate-y-[-2px]"
               >
-                <Puzzle className="h-5 w-5 mr-2" />
-                Puzzles
+                <Puzzle className="h-5 w-5 mr-2 transition-transform group-hover:scale-110" />
+                <span>Puzzles</span>
               </Button>
             </div>
           </div>

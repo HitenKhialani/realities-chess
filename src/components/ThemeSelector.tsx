@@ -5,31 +5,31 @@ import { Crown, Zap, Sun, Leaf } from 'lucide-react';
 const themes = [
   {
     id: 'light' as Theme,
-    name: 'Marble Hall',
+    name: 'Aurora',
     icon: Sun,
-    description: 'Golden marble chess hall',
-    gradient: 'from-amber-100 via-yellow-50 to-amber-100'
+    description: 'Morning sunrise planet',
+    gradient: 'from-yellow-200 via-orange-200 to-blue-200'
   },
   {
     id: 'dark' as Theme,
-    name: 'Obsidian Arena',
+    name: 'Cosmos',
     icon: Crown,
-    description: 'Gothic obsidian with mist',
-    gradient: 'from-purple-900 via-slate-900 to-purple-900'
+    description: 'Deep space journey',
+    gradient: 'from-blue-900 via-purple-900 to-cyan-800'
   },
   {
     id: 'neon' as Theme,
-    name: 'Cyber Grid',
+    name: 'Circuit',
     icon: Zap,
-    description: 'Futuristic holographic world',
-    gradient: 'from-cyan-500 via-teal-600 to-green-500'
+    description: 'High-tech arena',
+    gradient: 'from-purple-600 via-pink-600 to-green-500'
   },
   {
     id: 'zen' as Theme,
-    name: 'Bamboo Dojo',
+    name: 'Eden',
     icon: Leaf,
-    description: 'Peaceful bamboo sanctuary',
-    gradient: 'from-green-200 via-emerald-100 to-green-200'
+    description: 'Avatar forest planet',
+    gradient: 'from-green-300 via-emerald-400 to-amber-300'
   }
 ];
 
@@ -39,7 +39,7 @@ export function ThemeSelector() {
   return (
     <div className="floating-panel p-6 rounded-2xl">
       <h3 className="text-lg font-cinzel font-semibold mb-4 text-foreground">
-        Choose Your Reality
+        Choose Your World
       </h3>
       
       <div className="grid grid-cols-2 gap-3">
