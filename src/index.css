@@ -1,96 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&family=Noto+Serif:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Endgame Chess - Virtual World Design System */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    /* Light Theme - Marble Chess Hall */
+    --background: 45 15% 97%;
+    --foreground: 25 15% 15%;
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: 25 15% 15%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 25 15% 15%;
+    --primary: 45 85% 55%;
+    --primary-foreground: 25 15% 15%;
+    --secondary: 45 25% 92%;
+    --secondary-foreground: 25 15% 25%;
+    --muted: 45 15% 95%;
+    --muted-foreground: 25 10% 45%;
+    --accent: 42 95% 65%;
+    --accent-foreground: 25 15% 15%;
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 45 20% 88%;
+    --input: 45 20% 88%;
+    --ring: 45 85% 55%;
+    --radius: 0.75rem;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Light Theme Specific */
+    --marble-primary: 45 85% 55%;
+    --marble-secondary: 42 95% 65%;
+    --marble-accent: 38 90% 70%;
+    --marble-glow: 45 100% 75%;
+    --marble-shadow: 25 15% 15% / 0.1;
+    
+    /* Gradients */
+    --gradient-marble: linear-gradient(135deg, hsl(45 25% 98%), hsl(42 35% 95%), hsl(45 25% 98%));
+    --gradient-golden: linear-gradient(135deg, hsl(45 85% 55%), hsl(42 95% 65%), hsl(38 90% 70%));
+    --gradient-radiant: radial-gradient(circle at 50% 50%, hsl(45 100% 75% / 0.3), transparent 70%);
+    
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    --transition-elegant: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+  [data-theme="dark"] {
+    /* Dark Theme - Gothic Obsidian Arena */
+    --background: 240 8% 8%;
+    --foreground: 240 5% 92%;
+    --card: 240 8% 12%;
+    --card-foreground: 240 5% 92%;
+    --popover: 240 8% 10%;
+    --popover-foreground: 240 5% 92%;
+    --primary: 280 85% 65%;
+    --primary-foreground: 240 8% 8%;
+    --secondary: 240 6% 18%;
+    --secondary-foreground: 240 5% 85%;
+    --muted: 240 6% 15%;
+    --muted-foreground: 240 3% 55%;
+    --accent: 285 90% 70%;
+    --accent-foreground: 240 8% 8%;
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 240 5% 92%;
+    --border: 240 6% 20%;
+    --input: 240 6% 20%;
+    --ring: 280 85% 65%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    /* Dark Theme Specific */
+    --obsidian-primary: 280 85% 65%;
+    --obsidian-secondary: 285 90% 70%;
+    --obsidian-accent: 270 95% 75%;
+    --obsidian-glow: 280 100% 80%;
+    --obsidian-mist: 240 20% 85% / 0.05;
+    
+    /* Dark Gradients */
+    --gradient-obsidian: linear-gradient(135deg, hsl(240 8% 8%), hsl(240 10% 12%), hsl(240 8% 8%));
+    --gradient-purple: linear-gradient(135deg, hsl(280 85% 65%), hsl(285 90% 70%), hsl(270 95% 75%));
+    --gradient-mist: radial-gradient(circle at 50% 50%, hsl(280 100% 80% / 0.15), transparent 70%);
+  }
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+  [data-theme="neon"] {
+    /* Neon Theme - Cyber Grid World */
+    --background: 200 30% 8%;
+    --foreground: 180 100% 85%;
+    --card: 200 25% 12%;
+    --card-foreground: 180 100% 85%;
+    --popover: 200 30% 10%;
+    --popover-foreground: 180 100% 85%;
+    --primary: 180 100% 50%;
+    --primary-foreground: 200 30% 8%;
+    --secondary: 200 20% 18%;
+    --secondary-foreground: 180 90% 75%;
+    --muted: 200 20% 15%;
+    --muted-foreground: 180 50% 55%;
+    --accent: 165 100% 55%;
+    --accent-foreground: 200 30% 8%;
+    --destructive: 0 100% 60%;
+    --destructive-foreground: 180 100% 85%;
+    --border: 200 20% 25%;
+    --input: 200 20% 25%;
+    --ring: 180 100% 50%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    /* Neon Theme Specific */
+    --cyber-primary: 180 100% 50%;
+    --cyber-secondary: 165 100% 55%;
+    --cyber-accent: 120 100% 60%;
+    --cyber-glow: 180 100% 70%;
+    --cyber-grid: 180 100% 50% / 0.1;
+    
+    /* Neon Gradients */
+    --gradient-cyber: linear-gradient(135deg, hsl(200 30% 8%), hsl(195 35% 12%), hsl(200 30% 8%));
+    --gradient-neon: linear-gradient(135deg, hsl(180 100% 50%), hsl(165 100% 55%), hsl(120 100% 60%));
+    --gradient-hologram: radial-gradient(circle at 50% 50%, hsl(180 100% 70% / 0.2), transparent 70%);
+  }
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+  [data-theme="zen"] {
+    /* Zen Theme - Bamboo Dojo */
+    --background: 120 15% 96%;
+    --foreground: 30 20% 20%;
+    --card: 110 20% 98%;
+    --card-foreground: 30 20% 20%;
+    --popover: 110 20% 98%;
+    --popover-foreground: 30 20% 20%;
+    --primary: 120 40% 45%;
+    --primary-foreground: 110 20% 98%;
+    --secondary: 120 15% 90%;
+    --secondary-foreground: 30 15% 30%;
+    --muted: 120 10% 94%;
+    --muted-foreground: 30 10% 50%;
+    --accent: 350 60% 70%;
+    --accent-foreground: 30 20% 20%;
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 110 20% 98%;
+    --border: 120 15% 85%;
+    --input: 120 15% 85%;
+    --ring: 120 40% 45%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Zen Theme Specific */
+    --bamboo-primary: 120 40% 45%;
+    --bamboo-secondary: 110 50% 50%;
+    --bamboo-accent: 350 60% 70%;
+    --bamboo-sage: 120 30% 60%;
+    --bamboo-ink: 30 20% 20% / 0.8;
+    
+    /* Zen Gradients */
+    --gradient-bamboo: linear-gradient(135deg, hsl(120 15% 96%), hsl(115 20% 94%), hsl(120 15% 96%));
+    --gradient-sage: linear-gradient(135deg, hsl(120 40% 45%), hsl(110 50% 50%), hsl(120 30% 60%));
+    --gradient-sakura: radial-gradient(circle at 50% 50%, hsl(350 60% 70% / 0.2), transparent 70%);
   }
 }
 
@@ -100,6 +160,205 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground transition-all duration-300;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Theme-specific body backgrounds */
+  [data-theme="light"] body {
+    background: var(--gradient-marble);
+  }
+
+  [data-theme="dark"] body {
+    background: var(--gradient-obsidian);
+  }
+
+  [data-theme="neon"] body {
+    background: var(--gradient-cyber);
+  }
+
+  [data-theme="zen"] body {
+    background: var(--gradient-bamboo);
+  }
+}
+
+@layer components {
+  /* Floating Panel Effects */
+  .floating-panel {
+    @apply backdrop-blur-lg border border-border/50 shadow-2xl;
+    background: hsl(var(--card) / 0.8);
+    transition: var(--transition-smooth);
+  }
+
+  .floating-panel:hover {
+    @apply shadow-[0_25px_50px_-12px_rgb(0_0_0_/_0.25)] translate-y-[-2px];
+  }
+
+  /* Theme-specific effects */
+  [data-theme="dark"] .floating-panel {
+    box-shadow: 0 25px 50px -12px hsl(var(--obsidian-glow) / 0.3);
+  }
+
+  [data-theme="neon"] .floating-panel {
+    box-shadow: 0 25px 50px -12px hsl(var(--cyber-glow) / 0.4);
+    border: 1px solid hsl(var(--cyber-primary) / 0.3);
+  }
+
+  [data-theme="light"] .floating-panel {
+    box-shadow: 0 25px 50px -12px hsl(var(--marble-shadow));
+  }
+
+  [data-theme="zen"] .floating-panel {
+    box-shadow: 0 25px 50px -12px hsl(var(--bamboo-ink));
+  }
+
+  /* Interactive Glow Effects */
+  .glow-effect {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .glow-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.3), transparent);
+    transition: left 0.6s;
+  }
+
+  .glow-effect:hover::before {
+    left: 100%;
+  }
+
+  /* Chess Piece Animations */
+  .piece-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-10px) rotate(1deg); }
+    66% { transform: translateY(-5px) rotate(-1deg); }
+  }
+
+  /* Particle Effects */
+  .particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: hsl(var(--primary) / 0.6);
+    border-radius: 50%;
+    animation: drift 20s linear infinite;
+  }
+
+  @keyframes drift {
+    0% {
+      transform: translateY(100vh) translateX(0px);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100px) translateX(100px);
+      opacity: 0;
+    }
+  }
+
+  /* Theme Typography */
+  .text-cinzel {
+    font-family: 'Cinzel', serif;
+  }
+
+  .text-orbitron {
+    font-family: 'Orbitron', monospace;
+  }
+
+  .text-noto {
+    font-family: 'Noto Serif', serif;
+  }
+}
+
+@layer utilities {
+  /* Motion Preferences */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* Custom Animations */
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.8s ease-out forwards;
+  }
+
+  .animate-glow-pulse {
+    animation: glow-pulse 2s ease-in-out infinite;
+  }
+
+  /* Background utilities */
+  .bg-size-200 {
+    background-size: 200% 200%;
+  }
+
+  .bg-pos-0 {
+    background-position: 0% 50%;
+  }
+
+  .bg-pos-100 {
+    background-position: 100% 50%;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+    }
+    50% {
+      box-shadow: 0 0 40px hsl(var(--primary) / 0.6);
+    }
   }
 }

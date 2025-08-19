@@ -1,13 +1,26 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { ThemeProvider } from '@/contexts/ThemeContext';
+import { ParticleBackground } from '@/components/ParticleBackground';
+import { Navigation } from '@/components/Navigation';
+import { HeroSection } from '@/components/HeroSection';
+import { FeatureSection } from '@/components/FeatureSection';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <ThemeProvider>
+      <div className="relative min-h-screen overflow-x-hidden">
+        {/* Particle Background */}
+        <ParticleBackground />
+        
+        {/* Navigation */}
+        <Navigation />
+        
+        {/* Main Content */}
+        <main className="relative z-10">
+          <HeroSection />
+          <FeatureSection />
+        </main>
       </div>
-    </div>
+    </ThemeProvider>
   );
 };
 
