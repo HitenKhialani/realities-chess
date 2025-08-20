@@ -54,9 +54,10 @@ export function FeatureSection() {
 
   const getFontClass = () => {
     switch (theme) {
-      case 'dark': return 'font-cinzel';
-      case 'neon': return 'font-orbitron';
-      case 'zen': return 'font-noto';
+      case 'grid': return 'font-orbitron';
+      case 'flux': return 'font-orbitron';
+      case 'terra': return 'font-noto';
+      case 'glacis': return 'font-cinzel';
       default: return 'font-inter';
     }
   };

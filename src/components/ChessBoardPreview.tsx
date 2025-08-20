@@ -20,19 +20,19 @@ export function ChessBoardPreview() {
     const isLight = (row + col) % 2 === 0;
     
     switch (theme) {
-      case 'dark':
+      case 'grid':
         return isLight 
           ? 'bg-slate-200 hover:bg-slate-100' 
           : 'bg-slate-800 hover:bg-slate-700';
-      case 'neon':
+      case 'flux':
         return isLight 
           ? 'bg-cyan-100 hover:bg-cyan-50 shadow-sm shadow-cyan-500/20' 
           : 'bg-slate-900 hover:bg-slate-800 shadow-sm shadow-cyan-500/30';
-      case 'zen':
+      case 'terra':
         return isLight 
           ? 'bg-green-50 hover:bg-green-25' 
           : 'bg-green-200 hover:bg-green-150';
-      default: // light
+      default: // sol
         return isLight 
           ? 'bg-amber-50 hover:bg-amber-25' 
           : 'bg-amber-200 hover:bg-amber-150';
@@ -41,13 +41,13 @@ export function ChessBoardPreview() {
 
   const getPieceColor = (pieceColor: string) => {
     switch (theme) {
-      case 'dark':
+      case 'grid':
         return pieceColor === 'white' ? 'text-slate-100' : 'text-slate-900';
-      case 'neon':
+      case 'flux':
         return pieceColor === 'white' ? 'text-cyan-100' : 'text-slate-900';
-      case 'zen':
+      case 'terra':
         return pieceColor === 'white' ? 'text-green-800' : 'text-green-900';
-      default: // light
+      default: // sol
         return pieceColor === 'white' ? 'text-amber-800' : 'text-amber-900';
     }
   };
@@ -89,7 +89,7 @@ export function ChessBoardPreview() {
                     `}
                     style={{ 
                       animationDelay: `${Math.random() * 2}s`,
-                      filter: theme === 'neon' ? 'drop-shadow(0 0 4px currentColor)' : 'none'
+                      filter: theme === 'flux' ? 'drop-shadow(0 0 4px currentColor)' : 'none'
                     }}
                   >
                     {piece.type}

@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 
-export type Theme = 'light' | 'dark' | 'neon' | 'zen';
+export type Theme = 'grid' | 'sol' | 'flux' | 'terra' | 'glacis';
 
 interface ThemeContextType {
   theme: Theme;
@@ -10,11 +10,11 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('light');
+  const [theme, setTheme] = useState<Theme>('grid');
 
   useEffect(() => {
     const stored = localStorage.getItem('endgame-theme') as Theme;
-    if (stored && ['light', 'dark', 'neon', 'zen'].includes(stored)) {
+    if (stored && ['grid', 'sol', 'flux', 'terra', 'glacis'].includes(stored)) {
       setTheme(stored);
     }
   }, []);

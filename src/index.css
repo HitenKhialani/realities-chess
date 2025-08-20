@@ -4,43 +4,43 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Endgame Chess - Four Immersive Worlds Design System */
+/* Endgame Chess - Five Immersive Planet Worlds Design System */
 
 @layer base {
   :root {
-    /* Aurora World - Morning Sunrise Planet */
-    --background: 35 40% 96%;
-    --foreground: 25 20% 20%;
-    --card: 40 50% 98%;
-    --card-foreground: 25 20% 20%;
-    --popover: 40 50% 98%;
-    --popover-foreground: 25 20% 20%;
-    --primary: 35 90% 60%;
-    --primary-foreground: 25 20% 15%;
-    --secondary: 40 60% 88%;
-    --secondary-foreground: 25 20% 25%;
-    --muted: 38 45% 92%;
-    --muted-foreground: 25 15% 45%;
-    --accent: 25 95% 70%;
-    --accent-foreground: 25 20% 15%;
+    /* Grid World - Cosmic Neptune-Uranus Planet */
+    --background: 230 25% 8%;
+    --foreground: 180 60% 85%;
+    --card: 230 20% 12%;
+    --card-foreground: 180 60% 85%;
+    --popover: 230 25% 10%;
+    --popover-foreground: 180 60% 85%;
+    --primary: 180 100% 65%;
+    --primary-foreground: 230 25% 8%;
+    --secondary: 230 15% 18%;
+    --secondary-foreground: 180 50% 80%;
+    --muted: 230 12% 15%;
+    --muted-foreground: 180 30% 60%;
+    --accent: 195 95% 70%;
+    --accent-foreground: 230 25% 8%;
     --destructive: 0 75% 55%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 40 30% 85%;
-    --input: 40 30% 85%;
-    --ring: 35 90% 60%;
+    --destructive-foreground: 180 60% 85%;
+    --border: 230 15% 22%;
+    --input: 230 15% 22%;
+    --ring: 180 100% 65%;
     --radius: 0.75rem;
 
-    /* Aurora Theme Specific Colors */
-    --aurora-primary: 35 90% 60%;
-    --aurora-secondary: 25 95% 70%;
-    --aurora-accent: 200 60% 75%;
-    --aurora-glow: 35 100% 80%;
-    --aurora-clouds: 200 30% 90% / 0.6;
+    /* Grid Planet Specific Colors */
+    --grid-primary: 180 100% 65%;
+    --grid-secondary: 195 95% 70%;
+    --grid-accent: 170 85% 60%;
+    --grid-glow: 180 100% 75%;
+    --grid-cosmic: 220 40% 20% / 0.4;
     
-    /* Aurora Gradients */
-    --gradient-aurora: linear-gradient(135deg, hsl(35 60% 94%), hsl(40 70% 90%), hsl(200 40% 92%));
-    --gradient-sunrise: linear-gradient(135deg, hsl(35 90% 60%), hsl(25 95% 70%), hsl(200 60% 75%));
-    --gradient-morning: radial-gradient(circle at 50% 50%, hsl(35 100% 80% / 0.4), transparent 70%);
+    /* Grid Gradients - Deep Space with Glowing Accents */
+    --gradient-grid: linear-gradient(135deg, hsl(230 35% 4%), hsl(225 30% 8%), hsl(220 25% 6%), hsl(230 35% 4%));
+    --gradient-cosmic: linear-gradient(135deg, hsl(180 100% 65% / 0.1), hsl(195 95% 70% / 0.15), hsl(170 85% 60% / 0.1));
+    --gradient-neptune: radial-gradient(ellipse at 30% 20%, hsl(180 100% 75% / 0.3), transparent 60%), radial-gradient(ellipse at 70% 80%, hsl(195 95% 70% / 0.25), transparent 50%);
     
     /* Smooth Transitions */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -48,109 +48,144 @@
     --transition-elegant: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
-  [data-theme="dark"] {
-    /* Cosmos World - Deep Space Journey */
-    --background: 230 15% 6%;
-    --foreground: 200 40% 85%;
-    --card: 230 12% 10%;
-    --card-foreground: 200 40% 85%;
-    --popover: 230 15% 8%;
-    --popover-foreground: 200 40% 85%;
-    --primary: 200 100% 60%;
-    --primary-foreground: 230 15% 6%;
-    --secondary: 230 10% 15%;
-    --secondary-foreground: 200 30% 80%;
-    --muted: 230 8% 12%;
-    --muted-foreground: 200 20% 55%;
-    --accent: 240 80% 70%;
-    --accent-foreground: 230 15% 6%;
+  [data-theme="sol"] {
+    /* Sol World - Sunrise Nature Planet */
+    --background: 35 45% 96%;
+    --foreground: 25 25% 15%;
+    --card: 40 55% 98%;
+    --card-foreground: 25 25% 15%;
+    --popover: 40 55% 98%;
+    --popover-foreground: 25 25% 15%;
+    --primary: 25 95% 65%;
+    --primary-foreground: 25 25% 10%;
+    --secondary: 40 70% 88%;
+    --secondary-foreground: 25 20% 25%;
+    --muted: 38 50% 92%;
+    --muted-foreground: 25 15% 45%;
+    --accent: 15 90% 70%;
+    --accent-foreground: 25 25% 10%;
     --destructive: 0 75% 55%;
-    --destructive-foreground: 200 40% 85%;
-    --border: 230 8% 18%;
-    --input: 230 8% 18%;
-    --ring: 200 100% 60%;
+    --destructive-foreground: 40 55% 98%;
+    --border: 40 35% 85%;
+    --input: 40 35% 85%;
+    --ring: 25 95% 65%;
 
-    /* Cosmos Theme Specific Colors */
-    --cosmos-primary: 200 100% 60%;
-    --cosmos-secondary: 240 80% 70%;
-    --cosmos-accent: 190 90% 65%;
-    --cosmos-glow: 200 100% 75%;
-    --cosmos-nebula: 240 50% 40% / 0.3;
-    
-    /* Cosmos Gradients */
-    --gradient-cosmos: linear-gradient(135deg, hsl(230 15% 6%), hsl(225 20% 8%), hsl(230 15% 6%));
-    --gradient-space: linear-gradient(135deg, hsl(200 100% 60%), hsl(240 80% 70%), hsl(190 90% 65%));
-    --gradient-nebula: radial-gradient(circle at 50% 50%, hsl(200 100% 75% / 0.2), transparent 70%);
+    /* Sol Planet Specific Colors */
+    --sol-primary: 25 95% 65%;
+    --sol-secondary: 15 90% 70%;
+    --sol-accent: 45 85% 60%;
+    --sol-glow: 25 100% 80%;
+    --sol-rays: 35 70% 85% / 0.6;
+
+    /* Sol Gradients - Warm Sunrise Atmosphere */
+    --gradient-sol: linear-gradient(135deg, hsl(15 80% 88%), hsl(25 85% 85%), hsl(35 75% 90%), hsl(45 70% 92%));
+    --gradient-sunrise: linear-gradient(135deg, hsl(25 95% 65%), hsl(15 90% 70%), hsl(45 85% 60%));
+    --gradient-dawn: radial-gradient(ellipse at 50% 10%, hsl(25 100% 80% / 0.4), transparent 70%), radial-gradient(ellipse at 80% 30%, hsl(15 90% 75% / 0.3), transparent 60%);
   }
 
-  [data-theme="neon"] {
-    /* Circuit World - High-Tech Arena */
-    --background: 280 20% 8%;
-    --foreground: 300 60% 90%;
-    --card: 280 15% 12%;
-    --card-foreground: 300 60% 90%;
-    --popover: 280 20% 10%;
-    --popover-foreground: 300 60% 90%;
-    --primary: 300 100% 65%;
-    --primary-foreground: 280 20% 8%;
-    --secondary: 280 12% 18%;
-    --secondary-foreground: 300 50% 85%;
-    --muted: 280 10% 15%;
-    --muted-foreground: 300 30% 60%;
-    --accent: 320 100% 70%;
-    --accent-foreground: 280 20% 8%;
-    --destructive: 0 100% 60%;
-    --destructive-foreground: 300 60% 90%;
-    --border: 280 15% 22%;
-    --input: 280 15% 22%;
-    --ring: 300 100% 65%;
+  [data-theme="flux"] {
+    /* Flux World - Cyber Gaming Planet */
+    --background: 285 30% 6%;
+    --foreground: 300 70% 90%;
+    --card: 285 25% 10%;
+    --card-foreground: 300 70% 90%;
+    --popover: 285 30% 8%;
+    --popover-foreground: 300 70% 90%;
+    --primary: 320 100% 70%;
+    --primary-foreground: 285 30% 6%;
+    --secondary: 285 20% 18%;
+    --secondary-foreground: 300 60% 85%;
+    --muted: 285 15% 12%;
+    --muted-foreground: 300 40% 65%;
+    --accent: 130 100% 65%;
+    --accent-foreground: 285 30% 6%;
+    --destructive: 0 100% 65%;
+    --destructive-foreground: 300 70% 90%;
+    --border: 285 20% 22%;
+    --input: 285 20% 22%;
+    --ring: 320 100% 70%;
 
-    /* Circuit Theme Specific Colors */
-    --circuit-primary: 300 100% 65%;
-    --circuit-secondary: 320 100% 70%;
-    --circuit-accent: 140 100% 60%;
-    --circuit-glow: 300 100% 80%;
-    --circuit-grid: 300 80% 50% / 0.15;
-    
-    /* Circuit Gradients */
-    --gradient-circuit: linear-gradient(135deg, hsl(280 20% 8%), hsl(285 25% 10%), hsl(280 20% 8%));
-    --gradient-neon: linear-gradient(135deg, hsl(300 100% 65%), hsl(320 100% 70%), hsl(140 100% 60%));
-    --gradient-tech: radial-gradient(circle at 50% 50%, hsl(300 100% 80% / 0.25), transparent 70%);
+    /* Flux Planet Specific Colors */
+    --flux-primary: 320 100% 70%;
+    --flux-secondary: 130 100% 65%;
+    --flux-accent: 60 100% 70%;
+    --flux-glow: 320 100% 80%;
+    --flux-grid: 300 80% 50% / 0.2;
+
+    /* Flux Gradients - Neon Cyber Grid */
+    --gradient-flux: linear-gradient(135deg, hsl(285 40% 4%), hsl(290 35% 6%), hsl(285 30% 8%), hsl(280 35% 5%));
+    --gradient-cyber: linear-gradient(135deg, hsl(320 100% 70% / 0.15), hsl(130 100% 65% / 0.12), hsl(60 100% 70% / 0.1));
+    --gradient-neon: radial-gradient(ellipse at 20% 70%, hsl(320 100% 80% / 0.4), transparent 50%), radial-gradient(ellipse at 80% 30%, hsl(130 100% 65% / 0.35), transparent 60%);
   }
 
-  [data-theme="zen"] {
-    /* Eden World - Avatar Forest Planet */
-    --background: 120 25% 95%;
-    --foreground: 35 30% 15%;
-    --card: 110 30% 97%;
-    --card-foreground: 35 30% 15%;
-    --popover: 110 30% 97%;
-    --popover-foreground: 35 30% 15%;
-    --primary: 120 60% 40%;
-    --primary-foreground: 110 30% 97%;
-    --secondary: 115 35% 85%;
-    --secondary-foreground: 35 25% 25%;
-    --muted: 118 20% 90%;
-    --muted-foreground: 35 20% 45%;
-    --accent: 25 70% 55%;
-    --accent-foreground: 110 30% 97%;
+  [data-theme="terra"] {
+    /* Terra World - Forest Jungle Planet */
+    --background: 120 20% 92%;
+    --foreground: 30 35% 20%;
+    --card: 115 25% 95%;
+    --card-foreground: 30 35% 20%;
+    --popover: 115 25% 95%;
+    --popover-foreground: 30 35% 20%;
+    --primary: 120 50% 35%;
+    --primary-foreground: 115 25% 95%;
+    --secondary: 115 30% 82%;
+    --secondary-foreground: 30 30% 25%;
+    --muted: 118 18% 88%;
+    --muted-foreground: 30 25% 45%;
+    --accent: 25 65% 45%;
+    --accent-foreground: 115 25% 95%;
     --destructive: 0 75% 55%;
-    --destructive-foreground: 110 30% 97%;
-    --border: 115 25% 82%;
-    --input: 115 25% 82%;
-    --ring: 120 60% 40%;
+    --destructive-foreground: 115 25% 95%;
+    --border: 115 20% 80%;
+    --input: 115 20% 80%;
+    --ring: 120 50% 35%;
 
-    /* Eden Theme Specific Colors */
-    --eden-primary: 120 60% 40%;
-    --eden-secondary: 115 70% 45%;
-    --eden-accent: 25 70% 55%;
-    --eden-nature: 120 40% 60%;
-    --eden-earth: 35 60% 50% / 0.3;
-    
-    /* Eden Gradients */
-    --gradient-eden: linear-gradient(135deg, hsl(120 25% 95%), hsl(115 30% 92%), hsl(118 35% 94%));
-    --gradient-forest: linear-gradient(135deg, hsl(120 60% 40%), hsl(115 70% 45%), hsl(110 65% 50%));
-    --gradient-nature: radial-gradient(circle at 50% 50%, hsl(120 40% 60% / 0.3), transparent 70%);
+    /* Terra Planet Specific Colors */
+    --terra-primary: 120 50% 35%;
+    --terra-secondary: 115 60% 40%;
+    --terra-accent: 25 65% 45%;
+    --terra-nature: 120 40% 55%;
+    --terra-earth: 30 50% 60% / 0.4;
+
+    /* Terra Gradients - Deep Forest Atmosphere */
+    --gradient-terra: linear-gradient(135deg, hsl(125 30% 88%), hsl(120 25% 90%), hsl(115 30% 85%), hsl(110 35% 87%));
+    --gradient-forest: linear-gradient(135deg, hsl(120 50% 35%), hsl(115 60% 40%), hsl(110 55% 45%));
+    --gradient-jungle: radial-gradient(ellipse at 40% 60%, hsl(120 40% 55% / 0.3), transparent 70%), radial-gradient(ellipse at 70% 20%, hsl(25 65% 45% / 0.25), transparent 60%);
+  }
+
+  [data-theme="glacis"] {
+    /* Glacis World - Icy Antarctica Planet */
+    --background: 200 15% 94%;
+    --foreground: 210 25% 25%;
+    --card: 200 20% 98%;
+    --card-foreground: 210 25% 25%;
+    --popover: 200 20% 98%;
+    --popover-foreground: 210 25% 25%;
+    --primary: 200 60% 65%;
+    --primary-foreground: 200 20% 98%;
+    --secondary: 205 25% 88%;
+    --secondary-foreground: 210 20% 30%;
+    --muted: 202 15% 92%;
+    --muted-foreground: 210 15% 50%;
+    --accent: 195 50% 70%;
+    --accent-foreground: 200 20% 98%;
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 200 20% 98%;
+    --border: 205 20% 85%;
+    --input: 205 20% 85%;
+    --ring: 200 60% 65%;
+
+    /* Glacis Planet Specific Colors */
+    --glacis-primary: 200 60% 65%;
+    --glacis-secondary: 195 50% 70%;
+    --glacis-accent: 185 45% 75%;
+    --glacis-ice: 200 30% 85%;
+    --glacis-frost: 210 20% 88% / 0.6;
+
+    /* Glacis Gradients - Icy Crystalline Atmosphere */
+    --gradient-glacis: linear-gradient(135deg, hsl(205 25% 96%), hsl(200 30% 94%), hsl(195 25% 92%), hsl(210 20% 95%));
+    --gradient-ice: linear-gradient(135deg, hsl(200 60% 65%), hsl(195 50% 70%), hsl(185 45% 75%));
+    --gradient-frost: radial-gradient(ellipse at 60% 40%, hsl(200 30% 85% / 0.4), transparent 70%), radial-gradient(ellipse at 30% 80%, hsl(185 45% 75% / 0.35), transparent 60%);
   }
 }
 
@@ -160,59 +195,125 @@
   }
 
   body {
-    @apply bg-background text-foreground transition-all duration-300;
+    @apply bg-background text-foreground transition-all duration-500;
     font-family: 'Inter', sans-serif;
   }
 
-  /* Four World Body Backgrounds */
-  [data-theme="light"] body {
-    background: var(--gradient-aurora);
+  /* Five Planet World Body Backgrounds */
+  [data-theme="grid"] body {
+    background: var(--gradient-grid), var(--gradient-neptune);
+    background-size: 100% 100%, 200% 200%;
+    animation: cosmicShift 20s ease-in-out infinite;
   }
 
-  [data-theme="dark"] body {
-    background: var(--gradient-cosmos);
+  [data-theme="sol"] body {
+    background: var(--gradient-sol), var(--gradient-dawn);
+    background-size: 100% 100%, 150% 150%;
+    animation: sunriseGlow 15s ease-in-out infinite;
   }
 
-  [data-theme="neon"] body {
-    background: var(--gradient-circuit);
+  [data-theme="flux"] body {
+    background: var(--gradient-flux), var(--gradient-neon);
+    background-size: 100% 100%, 250% 250%;
+    animation: cyberPulse 12s ease-in-out infinite;
   }
 
-  [data-theme="zen"] body {
-    background: var(--gradient-eden);
+  [data-theme="terra"] body {
+    background: var(--gradient-terra), var(--gradient-jungle);
+    background-size: 100% 100%, 180% 180%;
+    animation: forestBreeze 18s ease-in-out infinite;
+  }
+
+  [data-theme="glacis"] body {
+    background: var(--gradient-glacis), var(--gradient-frost);
+    background-size: 100% 100%, 160% 160%;
+    animation: iceShimmer 22s ease-in-out infinite;
+  }
+
+  @keyframes cosmicShift {
+    0%, 100% { background-position: 0% 50%, 0% 0%; }
+    50% { background-position: 0% 50%, 100% 100%; }
+  }
+
+  @keyframes sunriseGlow {
+    0%, 100% { background-position: 0% 50%, 0% 0%; }
+    50% { background-position: 0% 50%, 100% 100%; }
+  }
+
+  @keyframes cyberPulse {
+    0%, 100% { background-position: 0% 50%, 0% 0%; }
+    50% { background-position: 0% 50%, 100% 100%; }
+  }
+
+  @keyframes forestBreeze {
+    0%, 100% { background-position: 0% 50%, 0% 0%; }
+    50% { background-position: 0% 50%, 100% 100%; }
+  }
+
+  @keyframes iceShimmer {
+    0%, 100% { background-position: 0% 50%, 0% 0%; }
+    50% { background-position: 0% 50%, 100% 100%; }
   }
 }
 
 @layer components {
   /* Floating Panel Effects */
   .floating-panel {
-    @apply backdrop-blur-lg border border-border/50 shadow-2xl;
-    background: hsl(var(--card) / 0.8);
+    @apply backdrop-blur-xl border border-border/60 shadow-2xl;
+    background: hsl(var(--card) / 0.85);
     transition: var(--transition-smooth);
   }
 
   .floating-panel:hover {
-    @apply shadow-[0_25px_50px_-12px_rgb(0_0_0_/_0.25)] translate-y-[-2px];
+    @apply translate-y-[-3px];
+    box-shadow: 0 35px 60px -12px hsl(var(--primary) / 0.4);
   }
 
-  /* World-specific floating panel effects */
-  [data-theme="light"] .floating-panel {
-    box-shadow: 0 25px 50px -12px hsl(var(--aurora-glow) / 0.3);
-    border: 1px solid hsl(var(--aurora-clouds));
+  /* Planet-specific floating panel effects */
+  [data-theme="grid"] .floating-panel {
+    box-shadow: 0 25px 50px -12px hsl(var(--grid-glow) / 0.4);
+    border: 1px solid hsl(var(--grid-cosmic));
   }
 
-  [data-theme="dark"] .floating-panel {
-    box-shadow: 0 25px 50px -12px hsl(var(--cosmos-glow) / 0.4);
-    border: 1px solid hsl(var(--cosmos-nebula));
+  [data-theme="grid"] .floating-panel:hover {
+    box-shadow: 0 35px 60px -12px hsl(var(--grid-glow) / 0.6);
   }
 
-  [data-theme="neon"] .floating-panel {
-    box-shadow: 0 25px 50px -12px hsl(var(--circuit-glow) / 0.5);
-    border: 1px solid hsl(var(--circuit-grid));
+  [data-theme="sol"] .floating-panel {
+    box-shadow: 0 25px 50px -12px hsl(var(--sol-glow) / 0.35);
+    border: 1px solid hsl(var(--sol-rays));
   }
 
-  [data-theme="zen"] .floating-panel {
-    box-shadow: 0 25px 50px -12px hsl(var(--eden-nature) / 0.4);
-    border: 1px solid hsl(var(--eden-earth));
+  [data-theme="sol"] .floating-panel:hover {
+    box-shadow: 0 35px 60px -12px hsl(var(--sol-glow) / 0.5);
+  }
+
+  [data-theme="flux"] .floating-panel {
+    box-shadow: 0 25px 50px -12px hsl(var(--flux-glow) / 0.5);
+    border: 1px solid hsl(var(--flux-grid));
+  }
+
+  [data-theme="flux"] .floating-panel:hover {
+    box-shadow: 0 35px 60px -12px hsl(var(--flux-glow) / 0.7);
+  }
+
+  [data-theme="terra"] .floating-panel {
+    box-shadow: 0 25px 50px -12px hsl(var(--terra-nature) / 0.4);
+    border: 1px solid hsl(var(--terra-earth));
+  }
+
+  [data-theme="terra"] .floating-panel:hover {
+    box-shadow: 0 35px 60px -12px hsl(var(--terra-nature) / 0.6);
+  }
+
+  [data-theme="glacis"] .floating-panel {
+    box-shadow: 0 25px 50px -12px hsl(var(--glacis-ice) / 0.4);
+    border: 1px solid hsl(var(--glacis-frost));
+    backdrop-filter: blur(20px);
+  }
+
+  [data-theme="glacis"] .floating-panel:hover {
+    box-shadow: 0 35px 60px -12px hsl(var(--glacis-ice) / 0.6);
   }
 
   /* Interactive Glow Effects */
@@ -228,8 +329,8 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.3), transparent);
-    transition: left 0.6s;
+    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.4), transparent);
+    transition: left 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .glow-effect:hover::before {
@@ -238,48 +339,35 @@
 
   /* Chess Piece Animations */
   .piece-float {
-    animation: float 6s ease-in-out infinite;
+    animation: float 8s ease-in-out infinite;
   }
 
   @keyframes float {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    33% { transform: translateY(-10px) rotate(1deg); }
-    66% { transform: translateY(-5px) rotate(-1deg); }
+    0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
+    25% { transform: translateY(-8px) rotate(1deg) scale(1.02); }
+    50% { transform: translateY(-12px) rotate(0deg) scale(1.04); }
+    75% { transform: translateY(-8px) rotate(-1deg) scale(1.02); }
   }
 
-  /* Particle Effects */
-  .particles {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    pointer-events: none;
+  /* Planet-Specific Typography */
+  [data-theme="grid"] {
+    --font-primary: 'Orbitron';
   }
 
-  .particle {
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    background: hsl(var(--primary) / 0.6);
-    border-radius: 50%;
-    animation: drift 20s linear infinite;
+  [data-theme="sol"] {
+    --font-primary: 'Inter';
   }
 
-  @keyframes drift {
-    0% {
-      transform: translateY(100vh) translateX(0px);
-      opacity: 0;
-    }
-    10% {
-      opacity: 1;
-    }
-    90% {
-      opacity: 1;
-    }
-    100% {
-      transform: translateY(-100px) translateX(100px);
-      opacity: 0;
-    }
+  [data-theme="flux"] {
+    --font-primary: 'Orbitron';
+  }
+
+  [data-theme="terra"] {
+    --font-primary: 'Noto Serif';
+  }
+
+  [data-theme="glacis"] {
+    --font-primary: 'Cinzel';
   }
 
   /* Theme Typography */
@@ -310,15 +398,28 @@
 
   /* Custom Animations */
   .animate-fade-in {
-    animation: fade-in 0.6s ease-out forwards;
+    animation: fade-in 0.8s ease-out forwards;
   }
 
   .animate-slide-up {
-    animation: slide-up 0.8s ease-out forwards;
+    animation: slide-up 1s ease-out forwards;
   }
 
   .animate-glow-pulse {
-    animation: glow-pulse 2s ease-in-out infinite;
+    animation: glow-pulse 3s ease-in-out infinite;
+  }
+
+  /* Glassmorphism Effect */
+  .glass-effect {
+    @apply backdrop-blur-lg bg-white/10 border border-white/20;
+  }
+
+  [data-theme="glacis"] .glass-effect {
+    @apply backdrop-blur-xl bg-white/15 border border-white/30;
+    background: linear-gradient(135deg, 
+      hsl(var(--glacis-ice) / 0.2), 
+      hsl(var(--glacis-primary) / 0.1)
+    );
   }
 
   /* Background utilities */
@@ -337,7 +438,7 @@
   @keyframes fade-in {
     from {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(30px);
     }
     to {
       opacity: 1;
@@ -348,7 +449,7 @@
   @keyframes slide-up {
     from {
       opacity: 0;
-      transform: translateY(40px);
+      transform: translateY(50px);
     }
     to {
       opacity: 1;
@@ -358,10 +459,10 @@
 
   @keyframes glow-pulse {
     0%, 100% {
-      box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+      box-shadow: 0 0 30px hsl(var(--primary) / 0.4);
     }
     50% {
-      box-shadow: 0 0 40px hsl(var(--primary) / 0.6);
+      box-shadow: 0 0 50px hsl(var(--primary) / 0.8);
     }
   }
 }

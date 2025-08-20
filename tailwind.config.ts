@@ -68,45 +68,54 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Four World Colors
-				aurora: {
-					primary: 'hsl(var(--aurora-primary))',
-					secondary: 'hsl(var(--aurora-secondary))', 
-					accent: 'hsl(var(--aurora-accent))',
-					glow: 'hsl(var(--aurora-glow))'
+				// Five World Colors
+				grid: {
+					primary: 'hsl(var(--grid-primary))',
+					secondary: 'hsl(var(--grid-secondary))', 
+					accent: 'hsl(var(--grid-accent))',
+					glow: 'hsl(var(--grid-glow))'
 				},
-				cosmos: {
-					primary: 'hsl(var(--cosmos-primary))',
-					secondary: 'hsl(var(--cosmos-secondary))',
-					accent: 'hsl(var(--cosmos-accent))',
-					glow: 'hsl(var(--cosmos-glow))'
+				sol: {
+					primary: 'hsl(var(--sol-primary))',
+					secondary: 'hsl(var(--sol-secondary))',
+					accent: 'hsl(var(--sol-accent))',
+					glow: 'hsl(var(--sol-glow))'
 				},
-				circuit: {
-					primary: 'hsl(var(--circuit-primary))',
-					secondary: 'hsl(var(--circuit-secondary))',
-					accent: 'hsl(var(--circuit-accent))',
-					glow: 'hsl(var(--circuit-glow))'
+				flux: {
+					primary: 'hsl(var(--flux-primary))',
+					secondary: 'hsl(var(--flux-secondary))',
+					accent: 'hsl(var(--flux-accent))',
+					glow: 'hsl(var(--flux-glow))'
 				},
-				eden: {
-					primary: 'hsl(var(--eden-primary))',
-					secondary: 'hsl(var(--eden-secondary))',
-					accent: 'hsl(var(--eden-accent))',
-					nature: 'hsl(var(--eden-nature))'
+				terra: {
+					primary: 'hsl(var(--terra-primary))',
+					secondary: 'hsl(var(--terra-secondary))',
+					accent: 'hsl(var(--terra-accent))',
+					nature: 'hsl(var(--terra-nature))'
+				},
+				glacis: {
+					primary: 'hsl(var(--glacis-primary))',
+					secondary: 'hsl(var(--glacis-secondary))',
+					accent: 'hsl(var(--glacis-accent))',
+					ice: 'hsl(var(--glacis-ice))'
 				}
 			},
 			backgroundImage: {
-				'gradient-aurora': 'var(--gradient-aurora)',
+				'gradient-grid': 'var(--gradient-grid)',
+				'gradient-cosmic': 'var(--gradient-cosmic)',
+				'gradient-neptune': 'var(--gradient-neptune)',
+				'gradient-sol': 'var(--gradient-sol)',
 				'gradient-sunrise': 'var(--gradient-sunrise)',
-				'gradient-morning': 'var(--gradient-morning)',
-				'gradient-cosmos': 'var(--gradient-cosmos)',
-				'gradient-space': 'var(--gradient-space)',
-				'gradient-nebula': 'var(--gradient-nebula)',
-				'gradient-circuit': 'var(--gradient-circuit)',
+				'gradient-dawn': 'var(--gradient-dawn)',
+				'gradient-flux': 'var(--gradient-flux)',
+				'gradient-cyber': 'var(--gradient-cyber)',
 				'gradient-neon': 'var(--gradient-neon)',
-				'gradient-tech': 'var(--gradient-tech)',
-				'gradient-eden': 'var(--gradient-eden)',
+				'gradient-terra': 'var(--gradient-terra)',
 				'gradient-forest': 'var(--gradient-forest)',
-				'gradient-nature': 'var(--gradient-nature)'
+				'gradient-jungle': 'var(--gradient-jungle)',
+				'gradient-glacis': 'var(--gradient-glacis)',
+				'gradient-ice': 'var(--gradient-ice)',
+				'gradient-frost': 'var(--gradient-frost)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

@@ -32,43 +32,51 @@ export function WorldBackground() {
 
     const getWorldConfig = () => {
       switch (theme) {
-        case 'light': // Aurora World
-          return {
-            elementCount: 8,
-            types: ['cloud', 'bird', 'sun-ray'],
-            colors: ['35 90% 60%', '25 95% 70%', '200 60% 75%'],
-            speed: 0.2,
-            size: { min: 20, max: 60 }
-          };
-        case 'dark': // Cosmos World
+        case 'grid': // Grid World - Cosmic Neptune
           return {
             elementCount: 12,
             types: ['planet', 'star', 'comet'],
-            colors: ['200 100% 60%', '240 80% 70%', '190 90% 65%'],
+            colors: ['180 100% 65%', '195 95% 70%', '170 85% 60%'],
             speed: 0.15,
             size: { min: 15, max: 45 }
           };
-        case 'neon': // Circuit World
+        case 'sol': // Sol World - Sunrise Nature
+          return {
+            elementCount: 8,
+            types: ['cloud', 'bird', 'sun-ray'],
+            colors: ['25 95% 65%', '15 90% 70%', '45 85% 60%'],
+            speed: 0.2,
+            size: { min: 20, max: 60 }
+          };
+        case 'flux': // Flux World - Cyber Gaming
           return {
             elementCount: 15,
             types: ['circuit', 'hexagon', 'grid'],
-            colors: ['300 100% 65%', '320 100% 70%', '140 100% 60%'],
+            colors: ['320 100% 70%', '130 100% 65%', '60 100% 70%'],
             speed: 0.3,
             size: { min: 25, max: 50 }
           };
-        case 'zen': // Eden World
+        case 'terra': // Terra World - Forest Jungle
           return {
             elementCount: 10,
             types: ['leaf', 'petal', 'branch'],
-            colors: ['120 60% 40%', '115 70% 45%', '25 70% 55%'],
+            colors: ['120 50% 35%', '115 60% 40%', '25 65% 45%'],
             speed: 0.1,
             size: { min: 18, max: 40 }
+          };
+        case 'glacis': // Glacis World - Icy Antarctica
+          return {
+            elementCount: 6,
+            types: ['crystal', 'snowflake', 'ice-shard'],
+            colors: ['200 60% 65%', '195 50% 70%', '185 45% 75%'],
+            speed: 0.08,
+            size: { min: 20, max: 50 }
           };
         default:
           return {
             elementCount: 8,
             types: ['cloud'],
-            colors: ['35 90% 60%'],
+            colors: ['25 95% 65%'],
             speed: 0.2,
             size: { min: 20, max: 60 }
           };
@@ -251,6 +259,61 @@ export function WorldBackground() {
           ctx.lineTo(element.size * 0.3, -element.size * 0.2);
           ctx.moveTo(0, 0);
           ctx.lineTo(element.size * 0.2, element.size * 0.3);
+          ctx.stroke();
+          break;
+
+        case 'crystal':
+          // Ice crystal shape
+          ctx.strokeStyle = `hsl(${color})`;
+          ctx.fillStyle = `hsl(${color} / 0.3)`;
+          ctx.lineWidth = 1;
+          ctx.shadowBlur = 8;
+          ctx.shadowColor = `hsl(${color})`;
+          ctx.beginPath();
+          for (let i = 0; i < 6; i++) {
+            const angle = (i * Math.PI) / 3;
+            const x = Math.cos(angle) * element.size * 0.25;
+            const y = Math.sin(angle) * element.size * 0.25;
+            if (i === 0) ctx.moveTo(x, y);
+            else ctx.lineTo(x, y);
+          }
+          ctx.closePath();
+          ctx.fill();
+          ctx.stroke();
+          break;
+
+        case 'snowflake':
+          // Snowflake pattern
+          ctx.strokeStyle = `hsl(${color})`;
+          ctx.lineWidth = 1;
+          ctx.shadowBlur = 6;
+          ctx.shadowColor = `hsl(${color})`;
+          ctx.beginPath();
+          for (let i = 0; i < 6; i++) {
+            ctx.save();
+            ctx.rotate((i * Math.PI) / 3);
+            ctx.moveTo(0, 0);
+            ctx.lineTo(element.size * 0.3, 0);
+            ctx.moveTo(element.size * 0.15, -element.size * 0.1);
+            ctx.lineTo(element.size * 0.15, element.size * 0.1);
+            ctx.restore();
+          }
+          ctx.stroke();
+          break;
+
+        case 'ice-shard':
+          // Sharp ice shard
+          ctx.fillStyle = `hsl(${color} / 0.6)`;
+          ctx.strokeStyle = `hsl(${color})`;
+          ctx.lineWidth = 1;
+          ctx.shadowBlur = 4;
+          ctx.shadowColor = `hsl(${color})`;
+          ctx.beginPath();
+          ctx.moveTo(0, -element.size * 0.4);
+          ctx.lineTo(element.size * 0.1, element.size * 0.1);
+          ctx.lineTo(-element.size * 0.1, element.size * 0.1);
+          ctx.closePath();
+          ctx.fill();
           ctx.stroke();
           break;
       }

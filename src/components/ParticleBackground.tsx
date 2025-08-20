@@ -30,31 +30,38 @@ export function ParticleBackground() {
 
     const getThemeConfig = () => {
       switch (theme) {
-        case 'dark':
+        case 'grid':
           return {
             particleCount: 50,
-            colors: [280, 285, 270], // Purple hues
+            colors: [180, 195, 170], // Cyan/teal hues
             speed: 0.3,
             size: { min: 1, max: 3 }
           };
-        case 'neon':
+        case 'flux':
           return {
             particleCount: 80,
-            colors: [180, 165, 120], // Cyan/green hues
+            colors: [320, 130, 60], // Pink/green/yellow neon hues
             speed: 0.5,
             size: { min: 1, max: 4 }
           };
-        case 'zen':
+        case 'terra':
           return {
             particleCount: 30,
-            colors: [120, 110, 350], // Green/pink hues (sakura)
+            colors: [120, 110, 25], // Green/brown forest hues
             speed: 0.2,
             size: { min: 2, max: 5 }
           };
-        default: // light
+        case 'glacis':
+          return {
+            particleCount: 35,
+            colors: [200, 195, 185], // Ice blue hues
+            speed: 0.15,
+            size: { min: 1, max: 3 }
+          };
+        default: // sol
           return {
             particleCount: 40,
-            colors: [45, 42, 38], // Golden hues
+            colors: [25, 15, 45], // Sunrise golden hues
             speed: 0.25,
             size: { min: 1, max: 3 }
           };
@@ -97,16 +104,16 @@ export function ParticleBackground() {
         ctx.save();
         ctx.globalAlpha = particle.opacity;
         
-        if (theme === 'neon') {
+        if (theme === 'flux') {
           // Glowing effect for neon theme
           ctx.shadowBlur = 10;
           ctx.shadowColor = `hsl(${particle.hue}, 100%, 50%)`;
         }
         
-        ctx.fillStyle = `hsl(${particle.hue}, ${theme === 'zen' ? '60%' : '70%'}, ${theme === 'light' ? '60%' : '70%'})`;
+        ctx.fillStyle = `hsl(${particle.hue}, ${theme === 'terra' ? '60%' : '70%'}, ${theme === 'sol' ? '60%' : '70%'})`;
         ctx.beginPath();
         
-        if (theme === 'zen' && Math.random() > 0.7) {
+        if (theme === 'terra' && Math.random() > 0.7) {
           // Sakura petal shape for zen theme
           ctx.ellipse(particle.x, particle.y, particle.size, particle.size * 0.6, Math.PI / 4, 0, 2 * Math.PI);
         } else {
@@ -117,8 +124,8 @@ export function ParticleBackground() {
         ctx.fill();
         ctx.restore();
 
-        // Connect nearby particles with lines (neon theme only)
-        if (theme === 'neon') {
+        // Connect nearby particles with lines (flux theme only)
+        if (theme === 'flux') {
           particles.slice(index + 1).forEach(otherParticle => {
             const dx = particle.x - otherParticle.x;
             const dy = particle.y - otherParticle.y;

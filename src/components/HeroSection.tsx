@@ -8,37 +8,45 @@ export function HeroSection() {
 
   const getThemeContent = () => {
     switch (theme) {
-      case 'dark':
+      case 'grid':
         return {
-          title: 'Enter Cosmos',
-          subtitle: 'Where chess masters journey through infinite space',
-          description: 'Navigate the cosmic depths where AI minds orbit in eternal battle. Every move ripples through stellar infinity.',
-          font: 'font-cinzel',
-          bgEffect: 'bg-gradient-nebula'
-        };
-      case 'neon':
-        return {
-          title: 'Access Circuit',
-          subtitle: 'Neural networks clash in electric harmony',
-          description: 'Jack into the high-tech arena where algorithms pulse with neon energy. Strategy flows through quantum circuits.',
+          title: 'Enter Grid',
+          subtitle: 'Navigate cosmic depths of Neptune',
+          description: 'Journey through deep space where AI minds orbit in eternal battle. Every move ripples through stellar infinity.',
           font: 'font-orbitron',
-          bgEffect: 'bg-gradient-tech'
+          bgEffect: 'bg-gradient-cosmic'
         };
-      case 'zen':
+      case 'flux':
         return {
-          title: 'Welcome to Eden',
+          title: 'Access Flux',
+          subtitle: 'Neural networks clash in neon harmony',
+          description: 'Jack into the high-tech arena where algorithms pulse with cyber energy. Strategy flows through quantum circuits.',
+          font: 'font-orbitron',
+          bgEffect: 'bg-gradient-cyber'
+        };
+      case 'terra':
+        return {
+          title: 'Welcome to Terra',
           subtitle: 'Where ancient wisdom flows through living forests',
-          description: 'Discover the sacred grove where nature\'s intelligence guides every move. Chess becomes one with the living world.',
+          description: 'Discover the sacred jungle where nature\'s intelligence guides every move. Chess becomes one with the living world.',
           font: 'font-noto',
-          bgEffect: 'bg-gradient-nature'
+          bgEffect: 'bg-gradient-jungle'
         };
-      default: // light
+      case 'glacis':
         return {
-          title: 'Enter Aurora',
+          title: 'Enter Glacis',
+          subtitle: 'Frozen realm of crystalline perfection',
+          description: 'Ascend to the icy planet where frost illuminates every strategy. Dawn breaks through arctic brilliance.',
+          font: 'font-cinzel',
+          bgEffect: 'bg-gradient-frost'
+        };
+      default: // sol
+        return {
+          title: 'Enter Sol',
           subtitle: 'Where champions rise with the morning sun',
           description: 'Ascend to the sunrise planet where golden light illuminates every victory. Dawn breaks on a new era of chess mastery.',
           font: 'font-inter',
-          bgEffect: 'bg-gradient-morning'
+          bgEffect: 'bg-gradient-dawn'
         };
     }
   };

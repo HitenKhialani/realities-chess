@@ -1,35 +1,42 @@
 import { useTheme, Theme } from '@/contexts/ThemeContext';
 import { Button } from '@/components/ui/button';
-import { Crown, Zap, Sun, Leaf } from 'lucide-react';
+import { Waves, Sun, Zap, TreePine, Snowflake } from 'lucide-react';
 
 const themes = [
   {
-    id: 'light' as Theme,
-    name: 'Aurora',
+    id: 'grid' as Theme,
+    name: 'Grid',
+    icon: Waves,
+    description: 'Cosmic Neptune planet',
+    gradient: 'from-cyan-900 via-blue-900 to-teal-800'
+  },
+  {
+    id: 'sol' as Theme,
+    name: 'Sol',
     icon: Sun,
-    description: 'Morning sunrise planet',
-    gradient: 'from-yellow-200 via-orange-200 to-blue-200'
+    description: 'Sunrise nature world',
+    gradient: 'from-orange-300 via-yellow-300 to-amber-200'
   },
   {
-    id: 'dark' as Theme,
-    name: 'Cosmos',
-    icon: Crown,
-    description: 'Deep space journey',
-    gradient: 'from-blue-900 via-purple-900 to-cyan-800'
-  },
-  {
-    id: 'neon' as Theme,
-    name: 'Circuit',
+    id: 'flux' as Theme,
+    name: 'Flux',
     icon: Zap,
-    description: 'High-tech arena',
-    gradient: 'from-purple-600 via-pink-600 to-green-500'
+    description: 'Cyber gaming arena',
+    gradient: 'from-fuchsia-600 via-purple-600 to-green-500'
   },
   {
-    id: 'zen' as Theme,
-    name: 'Eden',
-    icon: Leaf,
-    description: 'Avatar forest planet',
-    gradient: 'from-green-300 via-emerald-400 to-amber-300'
+    id: 'terra' as Theme,
+    name: 'Terra',
+    icon: TreePine,
+    description: 'Forest jungle planet',
+    gradient: 'from-green-700 via-emerald-600 to-amber-600'
+  },
+  {
+    id: 'glacis' as Theme,
+    name: 'Glacis',
+    icon: Snowflake,
+    description: 'Icy Antarctica world',
+    gradient: 'from-slate-300 via-blue-200 to-cyan-100'
   }
 ];
 
@@ -42,7 +49,7 @@ export function ThemeSelector() {
         Choose Your World
       </h3>
       
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
         {themes.map(({ id, name, icon: Icon, description, gradient }) => (
           <Button
             key={id}
