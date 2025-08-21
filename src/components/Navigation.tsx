@@ -1,6 +1,9 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ThemeSelector } from '@/components/ThemeSelector';
+import { useTheme } from '@/contexts/ThemeContext';
+import { useImmersive } from '@/contexts/ImmersiveContext';
 import { 
   Play, 
   GraduationCap, 
@@ -8,9 +11,9 @@ import {
   BarChart3, 
   Menu, 
   X,
-  Crown
+  Crown,
+  Rocket
 } from 'lucide-react';
-import { useTheme } from '@/contexts/ThemeContext';
 
 const navItems = [
   { id: 'play', label: 'Play', icon: Play, description: 'Challenge AI or friends' },
@@ -20,8 +23,10 @@ const navItems = [
 ];
 
 export function Navigation() {
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const { theme } = useTheme();
+  const { isImmersive, setImmersive } = useImmersive();
 
   const getFontClass = () => {
     switch (theme) {
@@ -31,6 +36,11 @@ export function Navigation() {
       case 'glacis': return 'font-cinzel';
       default: return 'font-inter';
     }
+  };
+
+  const handleEnterImmersive = () => {
+    setImmersive(true);
+    navigate('/landing');
   };
 
   return (
@@ -74,6 +84,18 @@ export function Navigation() {
             ))}
           </div>
 
+          {/* Immersive Mode Toggle */}
+          {!isImmersive && (
+            <Button
+              variant="floating"
+              onClick={handleEnterImmersive}
+              className="group"
+            >
+              <Rocket className="h-4 w-4 mr-2 transition-transform group-hover:scale-110" />
+              <span>Spaceship Mode</span>
+            </Button>
+          )}
+
           {/* Theme Selector */}
           <div className="relative">
             <ThemeSelector />
@@ -112,6 +134,17 @@ export function Navigation() {
                 {label}
               </Button>
             ))}
+            
+            {!isImmersive && (
+              <Button
+                variant="ghost"
+                onClick={handleEnterImmersive}
+                className="w-full justify-start gap-3"
+              >
+                <Rocket className="h-5 w-5" />
+                Spaceship Mode
+              </Button>
+            )}
             
             <div className="pt-3 border-t border-border">
               <ThemeSelector />

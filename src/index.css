@@ -382,6 +382,82 @@
   .text-noto {
     font-family: 'Noto Serif', serif;
   }
+
+  /* Immersive Mode Styles */
+  [data-immersive="on"] {
+    cursor: none;
+  }
+
+  /* Travel animations */
+  .depart {
+    filter: brightness(0.8);
+    animation: shake 0.3s ease-in-out;
+  }
+
+  .traverse::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: url('/immersive/warp-streaks.png') repeat-x;
+    background-size: 200% 100%;
+    animation: warpStreaks 1.2s linear;
+    z-index: 9999;
+    pointer-events: none;
+  }
+
+  .arrive {
+    animation: flashArrive 1s ease-out;
+  }
+
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-2px); }
+    75% { transform: translateX(2px); }
+  }
+
+  @keyframes warpStreaks {
+    0% { background-position: 0% 0%; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { background-position: -200% 0%; opacity: 0; }
+  }
+
+  @keyframes flashArrive {
+    0% { background: white; }
+    10% { background: transparent; }
+    100% { background: transparent; }
+  }
+
+  /* Planet-specific CSS variables */
+  [data-planet="grid"] {
+    --planet-primary: 0 229 255;
+    --planet-secondary: 20 184 166;
+    --planet-accent: 125 211 252;
+  }
+
+  [data-planet="sol"] {
+    --planet-primary: 255 184 140;
+    --planet-secondary: 255 218 107;
+    --planet-accent: 255 143 112;
+  }
+
+  [data-planet="flux"] {
+    --planet-primary: 255 42 173;
+    --planet-secondary: 26 209 255;
+    --planet-accent: 123 92 255;
+  }
+
+  [data-planet="terra"] {
+    --planet-primary: 34 197 94;
+    --planet-secondary: 139 94 52;
+    --planet-accent: 164 113 72;
+  }
+
+  [data-planet="glacis"] {
+    --planet-primary: 125 211 252;
+    --planet-secondary: 201 214 223;
+    --planet-accent: 179 236 255;
+  }
 }
 
 @layer utilities {
